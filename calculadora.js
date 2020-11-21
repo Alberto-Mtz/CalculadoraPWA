@@ -1,72 +1,45 @@
 var num1;
 var memoria = 0;
+var punto = false;
 var texto = document.getElementById('texto');
 
-function agregar9(){
-    var numero = document.getElementById('num9').value;
-    texto.innerHTML = texto.textContent + numero; 
+function agregar(id){
+    var numero = document.getElementById(id).value;
+    texto.innerHTML = texto.textContent + numero;
 }
-function agregar8(){
-    var numero = document.getElementById('num8').value;
-    texto.innerHTML = texto.textContent + numero; 
-}function agregar7(){
-    var numero = document.getElementById('num7').value;
-    texto.innerHTML = texto.textContent + numero; 
-}
-function agregar6(){
-    var numero = document.getElementById('num6').value;
-    texto.innerHTML = texto.textContent + numero; 
-}
-function agregar5(){
-    var numero = document.getElementById('num5').value;
-    texto.innerHTML = texto.textContent + numero; 
-}
-function agregar4(){
-    var numero = document.getElementById('num4').value;
-    texto.innerHTML = texto.textContent + numero; 
-}
-function agregar3(){
-    var numero = document.getElementById('num3').value;
-    texto.innerHTML = texto.textContent + numero; 
-}
-function agregar2(){
-    var numero = document.getElementById('num2').value;
-    texto.innerHTML = texto.textContent + numero; 
-}
-function agregar1(){
-    var numero = document.getElementById('num1').value;
-    texto.innerHTML = texto.textContent + numero; 
-}
-function agregar0(){
-    var numero = document.getElementById('num0').value;
-    texto.innerHTML = texto.textContent + numero; 
-}
+
 function decimal(){
     var numero = document.getElementById('decimal').value;
     texto.innerHTML = texto.textContent + numero; 
+    document.getElementById('decimal').disabled=true;
 }
 
 function suma(){
+    document.getElementById('decimal').disabled=false;
     num1 = texto.textContent;
     operador = "+";
     texto.innerHTML = "";
 }
 function resta(){
+    document.getElementById('decimal').disabled=false;
     num1 = texto.textContent;
     operador = "-";
     texto.innerHTML = "";
 }
 function multiplicacion(){
+    document.getElementById('decimal').disabled=false;
     num1 = texto.textContent;
     operador = "*";
     texto.innerHTML = "";
 }
 function division(){
+    document.getElementById('decimal').disabled=false;
     num1 = texto.textContent;
     operador = "/";
     texto.innerHTML = "";
 }
 function reset(){
+    document.getElementById('decimal').disabled=false;
     num1 = 0;
     num2 = 0;
     operador = "";

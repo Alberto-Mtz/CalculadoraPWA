@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <link rel="shortcut icon" href="images/iconos.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="manifest.json">
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" >
@@ -30,26 +30,26 @@
                 <td><button onclick="reset()">C</button></td>
             </tr>
             <tr>
-                <td><button id="num7" value="7" onclick="agregar7()">7</button></td>
-                <td><button id="num8" value="8" onclick="agregar8()">8</button></td>
-                <td><button id="num9" value="9" onclick="agregar9()">9</button></td>
+                <td><button id="num7" value="7" onclick="agregar(this.id)">7</button></td>
+                <td><button id="num8" value="8" onclick="agregar(this.id)">8</button></td>
+                <td><button id="num9" value="9" onclick="agregar(this.id)">9</button></td>
                 <td><button onclick="suma()">+</button></td>
             </tr>
             <tr>
-                <td><button id="num4" value="4" onclick="agregar4()">4</button></td>
-                <td><button id="num5" value="5" onclick="agregar5()">5</button></td>
-                <td><button id="num6" value="6" onclick="agregar6()">6</button></td>
+                <td><button id="num4" value="4" onclick="agregar(this.id)">4</button></td>
+                <td><button id="num5" value="5" onclick="agregar(this.id)">5</button></td>
+                <td><button id="num6" value="6" onclick="agregar(this.id)">6</button></td>
                 <td><button onclick="resta()">-</button></td>
             </tr>
             <tr>
-                <td><button id="num1" value="1" onclick="agregar1()">1</button></td>
-                <td><button id="num2" value="2" onclick="agregar2()">2</button></td>
-                <td><button id="num3" value="3" onclick="agregar3()">3</button></td>
+                <td><button id="num1" value="1" onclick="agregar(this.id)">1</button></td>
+                <td><button id="num2" value="2" onclick="agregar(this.id)">2</button></td>
+                <td><button id="num3" value="3" onclick="agregar(this.id)">3</button></td>
                 <td><button onclick="multiplicacion()">x</button></td>
             </tr>
             <tr>
                 <td><button id="decimal" value="." onclick="decimal()">.</button></td>
-                <td><button id="num0" value="0" onclick="agregar0()">0</button></td>
+                <td><button id="num0" value="0" onclick="agregar()">0</button></td>
                 <td><button id="igual" onclick="resolver()">=</button></td>
                 <td><button onclick="division()">/</button></td>
             </tr>
