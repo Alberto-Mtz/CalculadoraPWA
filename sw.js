@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cache_calculadora_pwa', CACHE_VERSION = "1",
+const CACHE_NAME = 'cache_calculadora_pwa', CACHE_VERSION = "2",
 toCache = [
     './',
     './style.css',
@@ -23,7 +23,7 @@ self.addEventListener('activate',e=>{
     e.waitUntil(
         caches.keys().then(cacheNombres =>{
             cacheNombres.map(cacheNombre =>{
-                if(cacheWhitelist.indexOf(cacheNombre)===-1 && cacheNombre.indexOf(CACHE_NAME + CACHE_VERSION)===-1){
+                if(cacheWhitelist.indexOf(cacheNombre)===-1 || cacheNombre.indexOf(CACHE_NAME + CACHE_VERSION)===-1){
                     return caches.delete(cacheNombre)
                 }
             })
