@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cache_calculadora_pwa',
+const CACHE_NAME = 'cache_calculadora_pwa-1',
 toCache = [
     './',
     './style.css',
