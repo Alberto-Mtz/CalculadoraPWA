@@ -10,7 +10,7 @@ toCache = [
 //Fase de instalacion de SW, almacena en cache los activos estaticos
 self.addEventListener('install',e=>{
     e.waitUntil(
-        caches.open(CACHE_NAME + CACHE_VERSION).then(cache =>{
+        caches.open(CACHE_NAME).then(cache =>{
             return cache.addAll(toCache).then(() => self.skipWaiting())
         })
         .catch(error => console.log("Fallo el registro de cache",error))
