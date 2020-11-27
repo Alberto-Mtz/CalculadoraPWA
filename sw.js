@@ -5,12 +5,13 @@ toCache = [
     './bootstrap.min.css',
     './script.js',
     './calculadora.js',
+    './manifest.json',
 ]
 
 //Fase de instalacion de SW, almacena en cache los activos estaticos
 self.addEventListener('install',e=>{
     e.waitUntil(
-        caches.open('cache01').then(cache =>{
+        caches.open('cache02').then(cache =>{
             return cache.addAll(toCache).then(() => self.skipWaiting())
         })
         .catch(error => console.log("Fallo el registro de cache",error))
@@ -19,7 +20,7 @@ self.addEventListener('install',e=>{
 
 //Activa el SW y busca los recursos para funcionar sin conexion
 self.addEventListener('activate',e=>{
-    const cacheWhitelist = ['cache01'];
+    const cacheWhitelist = ['cache02'];
     e.waitUntil(
         caches.keys().then(cacheNombres =>{
             cacheNombres.map(cacheNombre =>{
