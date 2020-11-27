@@ -1,4 +1,4 @@
-//const CACHE_NAME = 'cache_calculadora_pwa-4',
+const CACHE_NAME = 'cache_calculadora_pwa-6',
 toCache = [
     './',
     './style.css',
@@ -11,7 +11,7 @@ toCache = [
 //Fase de instalacion de SW, almacena en cache los activos estaticos
 self.addEventListener('install',e=>{
     e.waitUntil(
-        caches.open('cache04').then(cache =>{
+        caches.open(CACHE_NAME).then(cache =>{
             return cache.addAll(toCache).then(() => self.skipWaiting())
         })
         .catch(error => console.log("Fallo el registro de cache",error))
@@ -20,7 +20,7 @@ self.addEventListener('install',e=>{
 
 //Activa el SW y busca los recursos para funcionar sin conexion
 self.addEventListener('activate',e=>{
-    const cacheWhitelist = ['cache04'];
+    const cacheWhitelist = [CACHE_NAME];
     e.waitUntil(
         caches.keys().then(cacheNombres =>{
             cacheNombres.map(cacheNombre =>{
@@ -32,15 +32,17 @@ self.addEventListener('activate',e=>{
         .then(() => self.clients.claim())
     )
 });
-
-//Recupera una URL 
+ 
 self.addEventListener('fetch',e=>{
-    e.respondWith(
-        caches.match(e.request).then(res =>{
-            if(res){
-                return res;
-            }
-            return fetch(e.request);
-        })
-    )
+    if(navigator.onLine == false){
+        e.respondWith(
+            caches.match(e.request).then(res =>{
+                if(res){
+                    return res;
+                }
+                return fetch(e.request);
+            })
+        )
+    }
+    
 });
